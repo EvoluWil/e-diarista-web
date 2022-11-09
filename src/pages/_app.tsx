@@ -1,13 +1,35 @@
-import { ThemeProvider } from '@mui/material';
+import { ThemeProvider, Box } from '@mui/material';
+import { Footer } from 'components/surfaces/footer/footer.component';
+import { Header } from 'components/surfaces/header/header.component';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import { useMemo } from 'react';
 import { GlobalStyles } from 'styles/globals.styles';
 import { lightTheme } from 'styles/themes/light-theme.styles';
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
+  const title = useMemo(() => {
+    if (pageProps?.title) {
+      return `${pageProps.title} | e-diarista`;
+    }
+    return `e-diarista`;
+  }, [pageProps.title]);
+
   return (
-    <ThemeProvider theme={lightTheme}>
-      <GlobalStyles />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <ThemeProvider theme={lightTheme}>
+        <GlobalStyles />
+        <Box minHeight="100vh" display="flex" flexDirection="column">
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </Box>
+      </ThemeProvider>
+    </>
   );
-}
+};
+
+export default App;

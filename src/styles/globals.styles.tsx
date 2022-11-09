@@ -12,7 +12,6 @@ export const GlobalStyles: React.FC = () => {
           box-sizing: border-box;
         }
         body {
-          color: ${theme.palette.text.primary};
           background: ${theme.palette.background.paper};
           font-family: 'Poppins', sans-serif;
         }
