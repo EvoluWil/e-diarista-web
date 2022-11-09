@@ -6,9 +6,9 @@ import {
   MenuItem,
   IconButton
 } from '@mui/material';
-import { RoundedButton } from 'components/ui/buttons/rounded-button/rounded-button.component';
-import { Icon } from 'components/ui/icon/icon.component';
-import { Link } from 'components/ui/navigation/link/link.component';
+import { RoundedButton } from 'components/interactive/buttons/rounded-button/rounded-button.component';
+import { Icon } from 'components/display/icon/icon.component';
+import { Link } from 'components/interactive/navigation/link/link.component';
 import { useIsMobile } from 'hooks/is-mobile.hook';
 import { useState } from 'react';
 import {
@@ -18,12 +18,12 @@ import {
   HeaderLogo
 } from './header.styles';
 
-export const Header: React.FC = () => {
+export const Header = () => {
   const isMobile = useIsMobile();
   return isMobile ? <HeaderMobile /> : <HeaderDesktop />;
 };
 
-export const HeaderDesktop: React.FC = () => {
+export const HeaderDesktop = () => {
   return (
     <HeaderAppBar>
       <Toolbar component={Container}>
@@ -49,7 +49,7 @@ export const HeaderDesktop: React.FC = () => {
   );
 };
 
-export const HeaderMobile: React.FC = () => {
+export const HeaderMobile = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   return (
     <HeaderAppBar>

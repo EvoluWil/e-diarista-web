@@ -13,7 +13,7 @@ import {
   AccordionStyled
 } from './questions.styles';
 import { questions } from 'data/constants/questions.constant';
-import { Icon } from 'components/ui/icon/icon.component';
+import { Icon } from 'components/display/icon/icon.component';
 
 export const Questions = () => {
   const [activeAccordion, setActiveAccordion] = useState(0);

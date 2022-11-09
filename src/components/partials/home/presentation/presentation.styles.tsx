@@ -1,7 +1,10 @@
 import { PropsWithChildren } from 'react';
 import { Container, styled } from '@mui/material';
-import { RoundedButton } from 'components/ui/buttons/rounded-button/rounded-button.component';
-import { Link, LinkProps } from 'components/ui/navigation/link/link.component';
+import { RoundedButton } from 'components/interactive/buttons/rounded-button/rounded-button.component';
+import {
+  Link,
+  LinkProps
+} from 'components/interactive/navigation/link/link.component';
 
 export const SectionContainer = styled('section')`
   position: relative;

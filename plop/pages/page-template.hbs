@@ -1,0 +1,19 @@
+import { GetStaticProps } from 'next';
+
+const {{name}} = () => {
+  return (
+    <div>
+      Bem vindo á {{name}}
+    </div>
+  );
+};
+
+export default {{name}};
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {}
+  };
+};
+
+

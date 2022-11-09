@@ -10,7 +10,7 @@ const Template: ComponentStory<typeof Link> = args => (
   <Link {...args}>Click</Link>
 );
 
-export const Contained = Template.bind({});
-Contained.args = {
-  href: 'link'
+export const Default = Template.bind({});
+Default.args = {
+  href: 'your_url'
 };

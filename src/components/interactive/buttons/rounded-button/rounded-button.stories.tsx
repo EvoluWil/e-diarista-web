@@ -1,3 +1,4 @@
+import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { RoundedButton } from './rounded-button.component';
 
@@ -10,7 +11,4 @@ const Template: ComponentStory<typeof RoundedButton> = args => (
   <RoundedButton {...args}>Click</RoundedButton>
 );
 
-export const Contained = Template.bind({});
-Contained.args = {
-  variant: 'contained'
-};
+export const Default = Template.bind({});

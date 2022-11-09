@@ -1,5 +1,5 @@
 import { Box, List, Typography } from '@mui/material';
-import { Link } from 'components/ui/navigation/link/link.component';
+import { Link } from 'components/interactive/navigation/link/link.component';
 import {
   FooterContainer,
   FooterGrid,
@@ -11,7 +11,7 @@ import {
   FooterSocialList
 } from './footer.styles';
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
   return (
     <FooterContainer>
       <FooterGrid>

@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
-
 import { Router } from 'next/router';
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
+
 import {
   Link as LinkBase,
   LinkProps as MuiLinkProps,
