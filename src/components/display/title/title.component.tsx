@@ -1,3 +1,5 @@
+import { SystemProps } from '@mui/system';
+
 import {
   PageTitleContainer,
   PageTitleStyled,
@@ -7,11 +9,12 @@ import {
 interface TitleProps {
   title: string;
   subtitle?: string | JSX.Element;
+  sx?: SystemProps;
 }
 
-export const Title: React.FC<TitleProps> = ({ title, subtitle }) => {
+export const Title: React.FC<TitleProps> = ({ title, subtitle, sx }) => {
   return (
-    <PageTitleContainer>
+    <PageTitleContainer sx={sx}>
       <PageTitleStyled>{title}</PageTitleStyled>
       <PageSubtitleStyled>{subtitle}</PageSubtitleStyled>
     </PageTitleContainer>

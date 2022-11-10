@@ -17,7 +17,8 @@
     "baseUrl": "src",
     "paths": {
       "@models/*": ["data/models/*"],
-      "@services/*": ["data/models/*"]
+      "@services/*": ["data/services/*"],
+      "@page-hooks/*": ["data/hooks/pages/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.js"],

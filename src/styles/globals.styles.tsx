@@ -23,7 +23,7 @@ export const GlobalStyles: React.FC = () => {
         textarea,
         select,
         button {
-          font: 400 1rem 'Poppins', sans-serif;
+          font-family: 'Poppins', sans-serif;
         }
         button {
           cursor: pointer;

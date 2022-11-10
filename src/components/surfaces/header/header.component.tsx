@@ -9,7 +9,7 @@ import {
 import { RoundedButton } from 'components/interactive/buttons/rounded-button/rounded-button.component';
 import { Icon } from 'components/display/icon/icon.component';
 import { Link } from 'components/interactive/navigation/link/link.component';
-import { useIsMobile } from 'hooks/is-mobile.hook';
+import { useIsMobile } from 'data/hooks/is-mobile.hook';
 import { useState } from 'react';
 import {
   ButtonsContainer,

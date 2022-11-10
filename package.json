@@ -10,18 +10,24 @@
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook",
     "jest": "jest --watch",
-    "plop": "plop"
+    "plop": "plop",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.5",
+    "@hookform/resolvers": "^2.9.10",
     "@mui/material": "^5.10.13",
     "@testing-library/jest-dom": "^5.16.5",
+    "axios": "^1.1.3",
     "next": "13.0.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.39.1",
+    "react-input-mask": "2.0.4",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
@@ -39,6 +45,7 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
+    "@types/react-input-mask": "2.0.4",
     "babel-jest": "^29.3.1",
     "babel-loader": "^8.3.0",
     "eslint": "8.27.0",

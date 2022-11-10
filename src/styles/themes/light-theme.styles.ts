@@ -52,7 +52,11 @@ export const lightTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none'
+          textTransform: 'none',
+          borderWidth: '2px',
+          ':hover': {
+            borderWidth: '2px'
+          }
         }
       },
       variants: [
