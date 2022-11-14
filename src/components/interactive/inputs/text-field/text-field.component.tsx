@@ -10,7 +10,7 @@ import { TextFieldStyled } from './text-field.styles';
 
 type OutlinedTextFieldPropsEdit = Omit<OutlinedTextFieldProps, 'variant'>;
 export interface TextFieldStyledProps extends OutlinedTextFieldPropsEdit {
-  control?: Control;
+  control?: Control<any>;
   name: string;
   icon?: string;
   helperText?: any;
@@ -38,7 +38,6 @@ export const TextField: React.FC<TextFieldStyledProps> = ({
   return (
     <TextFieldStyled
       fullWidth
-      size="small"
       variant="outlined"
       name={field.name}
       error={hasHelper ? error : !!helperText}

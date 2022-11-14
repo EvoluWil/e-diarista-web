@@ -1,6 +1,7 @@
 import { ThemeProvider, Box } from '@mui/material';
 import { Footer } from 'components/surfaces/footer/footer.component';
 import { Header } from 'components/surfaces/header/header.component';
+import { MainProvider } from 'data/contexts/main-provider.context';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useMemo } from 'react';
@@ -21,12 +22,14 @@ const App = ({ Component, pageProps }: AppProps) => {
         <title>{title}</title>
       </Head>
       <ThemeProvider theme={lightTheme}>
-        <GlobalStyles />
-        <Box minHeight="100vh" display="flex" flexDirection="column">
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
-        </Box>
+        <MainProvider>
+          <GlobalStyles />
+          <Box minHeight="100vh" display="flex" flexDirection="column">
+            <Header />
+            <Component {...pageProps} />
+            <Footer />
+          </Box>
+        </MainProvider>
       </ThemeProvider>
     </>
   );

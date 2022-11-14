@@ -33,7 +33,6 @@ export const TextFieldMask: React.FC<TextFieldMaskProps> = ({
       {() => (
         <TextFieldStyled
           fullWidth
-          size="small"
           variant="outlined"
           name={field.name}
           error={hasHelper ? error : !!helperText}

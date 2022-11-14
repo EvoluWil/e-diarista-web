@@ -18,16 +18,6 @@ export const GlobalStyles: React.FC = () => {
         html {
           overflow: auto;
         }
-        body,
-        input,
-        textarea,
-        select,
-        button {
-          font-family: 'Poppins', sans-serif;
-        }
-        button {
-          cursor: pointer;
-        }
         a {
           color: inherit;
           text-decoration: none;

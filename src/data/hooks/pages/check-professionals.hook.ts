@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as yup from 'yup';
 import { User } from '@models/user.model';
-import { UserService } from '@services/user.service';
+import { UserService } from '@services/api/user.service';
 import { FieldValues } from 'react-hook-form';
 import { getNestError } from 'utils/formatter/get-nest-error.util';
 
