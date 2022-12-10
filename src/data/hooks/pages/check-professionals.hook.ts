@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import * as yup from 'yup';
-import { User } from '@models/user.model';
+import { UserInformation } from '@models/user-information.model';
 import { UserService } from '@services/api/user.service';
 import { FieldValues } from 'react-hook-form';
 import { getNestError } from 'utils/formatter/get-nest-error.util';
@@ -14,7 +14,7 @@ const CheckProfessionalsValidation = yup.object().shape({
 });
 
 export const useCheckProfessionals = () => {
-  const [housekeepers, setHousekeepers] = useState<User[]>([]);
+  const [housekeepers, setHousekeepers] = useState<UserInformation[]>([]);
   const [housekeepersCount, setHousekeepersCount] = useState(0);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);

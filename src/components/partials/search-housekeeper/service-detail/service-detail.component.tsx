@@ -29,6 +29,10 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({
     control,
     formState: { errors }
   } = useFormContext<ServiceDetailValidation>();
+  console.log(services);
+  if (!services?.length) {
+    return <div />;
+  }
 
   return (
     <div>
@@ -47,7 +51,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({
               field.onChange(value ?? services[0]?.id)
             }
           >
-            {services.map(service => (
+            {services?.map(service => (
               <ToggleButton key={service.id} value={service.id}>
                 <i className={service.icon ?? 'ed-cleaning-1'} />
                 {service.name}

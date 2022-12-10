@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { use, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -10,6 +10,7 @@ import { ServiceDetailValidation } from 'data/validation/service-detail/service-
 import { AddressValidation } from 'data/validation/address/address.validation';
 import { SignInValidation } from 'data/validation/sign-in/sign-in.validation';
 import { PaymentValidation } from 'data/validation/payment/payment.validation';
+import { useApi } from '../api.hook';
 
 export interface ServiceForm
   extends ServiceDetailValidation,
@@ -39,68 +40,12 @@ export const useHireProfessional = () => {
     resolver: yupResolver(FormSchema.userValidation())
   });
 
-  const services: Service[] = [
-    {
-      id: 123,
-      name: 'string',
-      icon: 'ed-cleaning-1',
-      restroomInterval: 123,
-      kitchenInterval: 123,
-      otherInterval: 123,
-      bedroomInterval: 123,
-      backyardInterval: 123,
-      roomInterval: 123,
-      serviceFee: 123,
-      totalInterval: 123,
-      restroomValue: 123,
-      kitchenValue: 123,
-      minValue: 123,
-      otherValue: 123,
-      bedroomValue: 123,
-      backyardValue: 123,
-      roomValue: 123
-    },
-    {
-      id: 1235,
-      name: 'string',
-      icon: 'ed-cleaning-1',
-      restroomInterval: 123,
-      kitchenInterval: 123,
-      otherInterval: 123,
-      bedroomInterval: 123,
-      backyardInterval: 123,
-      roomInterval: 123,
-      serviceFee: 123,
-      totalInterval: 123,
-      restroomValue: 123,
-      kitchenValue: 123,
-      minValue: 123,
-      otherValue: 123,
-      bedroomValue: 123,
-      backyardValue: 123,
-      roomValue: 123
-    },
-    {
-      id: 1234,
-      name: 'string',
-      icon: 'ed-cleaning-2',
-      restroomInterval: 123,
-      kitchenInterval: 123,
-      otherInterval: 123,
-      bedroomInterval: 123,
-      backyardInterval: 123,
-      roomInterval: 123,
-      serviceFee: 123,
-      totalInterval: 123,
-      restroomValue: 123,
-      kitchenValue: 123,
-      minValue: 123,
-      otherValue: 123,
-      bedroomValue: 123,
-      backyardValue: 123,
-      roomValue: 123
+  const services = useApi<Service[]>('/api/servicos') || [];
+
+  const getServiceTimeInterval = (serviceData: ServiceDetailValidation) => {
+    if (serviceData.service) {
     }
-  ];
+  };
 
   const onServiceSubmit = (data: ServiceForm) => {
     console.log(data);

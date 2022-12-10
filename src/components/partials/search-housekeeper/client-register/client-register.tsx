@@ -13,6 +13,7 @@ import {
 import { FilePicker } from '@inputs/file-picker/file-picker.component';
 import { UserValidation } from 'data/validation/user/user.validation';
 import { PasswordStrength } from 'components/feedbacks/password-strength/password-strength.component';
+import { useUser } from 'data/contexts/user.context';
 
 interface ClientRegisterProps {
   onBack: () => void;
@@ -23,6 +24,9 @@ export const ClientRegister: React.FC<ClientRegisterProps> = ({ onBack }) => {
     watch,
     formState: { errors }
   } = useFormContext<UserValidation>();
+  const {
+    userState: { user }
+  } = useUser();
 
   return (
     <div>
@@ -35,6 +39,7 @@ export const ClientRegister: React.FC<ClientRegisterProps> = ({ onBack }) => {
           name="user.fullName"
           label="Nome Completo"
           style={{ gridArea: 'name' }}
+          defaultValue={user.fullName}
           helperText={errors?.user?.fullName?.message}
         />
         <DatePicker
@@ -43,6 +48,7 @@ export const ClientRegister: React.FC<ClientRegisterProps> = ({ onBack }) => {
           name="user.birthDate"
           label="Data de Nascimento"
           style={{ gridArea: 'birthDate' }}
+          defaultValue={user.birthDate ? new Date(user.birthDate) : null}
           helperText={errors?.user?.birthDate?.message}
         />
         <TextFieldMask
@@ -51,6 +57,7 @@ export const ClientRegister: React.FC<ClientRegisterProps> = ({ onBack }) => {
           name="user.document"
           label="CPF"
           style={{ gridArea: 'document' }}
+          defaultValue={user.document}
           helperText={errors?.user?.document?.message}
           /*           InputProps={{ readOnly: !isRegister }}
            */
@@ -61,6 +68,7 @@ export const ClientRegister: React.FC<ClientRegisterProps> = ({ onBack }) => {
           name="user.phone"
           label="Telefone"
           style={{ gridArea: 'phone' }}
+          defaultValue={user.phone}
           helperText={errors?.user?.phone?.message}
         />
       </UserData>

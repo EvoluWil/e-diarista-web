@@ -1,15 +1,15 @@
 import { api } from './api.service';
-import { User } from '@models/user.model';
+import { UserInformation } from '@models/user-information.model';
 import { FieldValues } from 'react-hook-form';
 
 interface GetUsersByCepResponse {
-  housekeepers: User[];
+  housekeepers: UserInformation[];
   count: number;
 }
 
 export const UserService = {
   async getUsers() {
-    const { data } = await api.get<User[]>('/users');
+    const { data } = await api.get<UserInformation[]>('/users');
     return data;
   },
 
@@ -22,13 +22,13 @@ export const UserService = {
   },
 
   async getUser() {
-    const { data } = await api.get<User>(`/users`);
+    const { data } = await api.get<UserInformation>(`/users`);
 
     return data;
   },
 
   async createUser(newUser: FieldValues) {
-    const { data } = await api.post<User>('/users', newUser);
+    const { data } = await api.post<UserInformation>('/users', newUser);
     return data;
   },
 

@@ -1,24 +1,11 @@
+import { AddressResponse } from '@models/address.model';
+import { City } from '@models/city.model';
 import { api } from '@services/api/api.service';
-
-interface GetCitiesResponse {
-  nome: string;
-  id: number;
-}
-
-interface GetAddressByCepResponse {
-  logradouro: string;
-  bairro: string;
-  localidade: string;
-  uf: string;
-  cep: string;
-  ibge: string;
-  complemento: string;
-}
 
 export const AddressService = {
   async getCities(state: string) {
     try {
-      const { data } = await api.request<GetCitiesResponse[]>({
+      const { data } = await api.request<City[]>({
         baseURL: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/',
         url: `${state}/municipios`
       });
@@ -33,7 +20,7 @@ export const AddressService = {
 
   async getAddressByCep(cep: string) {
     try {
-      const { data } = await api.request<GetAddressByCepResponse>({
+      const { data } = await api.request<AddressResponse>({
         url: `api/enderecos?cep=${cep.replace(/\D/g, '')}`
       });
       return {
